@@ -66,8 +66,10 @@ Evaluation was conducted on a held-out test split of **363 samples**.
 ## 📉 Visualizations
 
 ### 1. Confusion Matrix
-
+![Confusion Matrix](assests/confusion_matrix.png)
 ### 2. Training & Validation Curves
+![Loss Curve](assests/loss_curve.png)
+![Accuracy Curve](assests/accuracy_curve.png)
 
 ---
 
