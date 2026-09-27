@@ -90,8 +90,8 @@ pip install -r requirements.txt
 │   ├── loss_curve.png             # Training & Validation loss curves
 │   └── accuracy_curve.png         # Training & Validation accuracy curves
 ├── utils.py                       # Core GPT architecture and utilities
-├── .py                       # Training loop with validation and checkpointing
-├──                    # Test set evaluation and metric generation
+├── gpt_download.py                # Function for download GPT2 weights
+├── GPT_Classifier.ipynb           # Complete training and inference notebook
 ├── requirements.txt               # Dependencies
 └── README.md                      # Documentation
 
