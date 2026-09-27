@@ -138,8 +138,8 @@ print("Prediction:", classify_headline(sample_text))
 │   ├── loss_curve.png             # Training & Validation loss curves
 │   └── accuracy_curve.png         # Training & Validation accuracy curves
 ├── utils.py                       # Core GPT architecture and utilities
-├── train.py                       # Training loop with validation and checkpointing
-├── evaluate.py                    # Test set evaluation and metric generation
+├── .py                       # Training loop with validation and checkpointing
+├──                    # Test set evaluation and metric generation
 ├── requirements.txt               # Dependencies
 └── README.md                      # Documentation
 
