@@ -73,59 +73,14 @@ Evaluation was conducted on a held-out test split of **363 samples**.
 ### 1. Installation
 
 ```bash
-git clone [https://github.com/](https://github.com/)/.git
-cd 
+git clone https://github.com/Hosein541/GPT2-financial-sentiment-classifier.git
+cd GPT2-financial-sentiment-classifier
+
 pip install -r requirements.txt
 
 ```
 
-### 2. Run Single-Text Inference
 
-```python
-import torch
-import tiktoken
-from previous_chapters import GPTModel
-
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-tokenizer = tiktoken.get_encoding("gpt2")
-
-# Define model configuration
-GPT_CONFIG_124M = {
-    "vocab_size": 50257,
-    "context_length": 256,
-    "emb_dim": 768,
-    "n_heads": 12,
-    "n_layers": 12,
-    "drop_rate": 0.0,
-    "qkv_bias": False
-}
-
-# Initialize model and load fine-tuned weights
-model = GPTModel(GPT_CONFIG_124M)
-model.out_head = torch.nn.Linear(GPT_CONFIG_124M["emb_dim"], 3)
-model.load_state_dict(torch.load("gpt2_financial_classifier.pt", map_location=device))
-model.to(device)
-model.eval()
-
-def classify_headline(text, max_length=256, pad_token_id=50256):
-    input_ids = tokenizer.encode(text)[:max_length]
-    input_ids += [pad_token_id] * (max_length - len(input_ids))
-    input_tensor = torch.tensor(input_ids, device=device).unsqueeze(0)
-
-    with torch.no_grad():
-        logits = model(input_tensor)[:, -1, :]
-    
-    pred_idx = torch.argmax(logits, dim=-1).item()
-    label_map = {0: "neutral", 1: "positive", 2: "negative"}
-    return label_map[pred_idx]
-
-# Sample financial statement
-sample_text = "Operating profit increased by 14% year-on-year to 45 million EUR."
-print("Prediction:", classify_headline(sample_text))
-
-```
-
----
 
 ## 📂 Repository Structure
 
