@@ -1,21 +1,9 @@
-# Copyright (c) Sebastian Raschka under Apache License 2.0 (see LICENSE.txt).
-# Source for "Build a Large Language Model From Scratch"
-#   - https://www.manning.com/books/build-a-large-language-model-from-scratch
-# Code: https://github.com/rasbt/LLMs-from-scratch
-#
-# This file collects all the relevant code that we covered thus far
-# throughout Chapters 2-5.
-# This file can be run as a standalone script.
-
 import numpy as np
 import tiktoken
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
-#####################################
-# Chapter 2
-#####################################
 
 
 class GPTDatasetV1(Dataset):
@@ -55,9 +43,7 @@ def create_dataloader_v1(txt, batch_size=4, max_length=256,
     return dataloader
 
 
-#####################################
-# Chapter 3
-#####################################
+
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_in, d_out, context_length, dropout, num_heads, qkv_bias=False):
         super().__init__()
@@ -114,9 +100,6 @@ class MultiHeadAttention(nn.Module):
         return context_vec
 
 
-#####################################
-# Chapter 4
-#####################################
 class LayerNorm(nn.Module):
     def __init__(self, emb_dim):
         super().__init__()
@@ -239,9 +222,6 @@ def generate_text_simple(model, idx, max_new_tokens, context_size):
     return idx
 
 
-#####################################
-# Chapter 5
-#####################################
 def assign(left, right):
     if left.shape != right.shape:
         raise ValueError(f"Shape mismatch. Left: {left.shape}, Right: {right.shape}")
