@@ -1,8 +1,4 @@
-فایل `README.md` کامل، استاندارد و آماده برای این پروژه با ساختار زیر تنظیم شده است. در این مستند، تغییر معماری GPT-2 (تبدیل Decoder به Classifier با استفاده از توکن نهایی)، مشخصات دیتاست مالی، ارزیابی ۳۶۳ داده تست و ۳ تصویر مورد نظرتان گنجانده شده است:
 
----
-
-```markdown
 # 📈 Financial News Sentiment Classification with Fine-Tuned GPT-2 (124M)
 
 Adapting a pretrained **GPT-2 Small (124M)** autoregressive language model for 3-class financial news sentiment analysis by replacing the original language modeling head with a sequence classification head in **PyTorch**.
@@ -11,7 +7,6 @@ Adapting a pretrained **GPT-2 Small (124M)** autoregressive language model for 3
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-```
 
 ---
 
